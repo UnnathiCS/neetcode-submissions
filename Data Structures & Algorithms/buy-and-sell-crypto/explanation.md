@@ -24,3 +24,16 @@ While r is within the array:
   Otherwise, move l to r (we found a cheaper buy price).
   Move r to the next day.
 Return maxP at the end.
+
+# Dynamic programming - O(n)
+here instead of using 2 pointers to keep track of buy and sell we make use of fact that there can be only 1 min price so if store it in memory and only update once we find new one less than min_buy remaining we will just calculate profit by iterating throughout the prices tofind the max value to sell
+
+Algorithm
+Initialize:
+minBuy as the first price
+maxP = 0 for the best profit
+Loop through each price sell:
+Update maxP with sell - minBuy.
+Update minBuy if we find a smaller price.
+Return maxP after scanning all days.
+
